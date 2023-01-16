@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View,StyleSheet,Image,Pressable } from 'react-native'
-import InputLabel from '../Globals/InputLabel'
+import FormLogin from './FormLogin'
+/* import InputLabel from '../Globals/InputLabel' */
 
 
 export default function Login () {
@@ -11,17 +12,9 @@ export default function Login () {
     
        <Text style={{color:'red',fontSize:18}}>SIGN IN</Text>
     
-       <View style={{marginVertical:20}}>
-          <InputLabel /* TextLabel='Usuario' */ textPlaceholder='usuario' boolTypeText={false} keyboardType='default'/>
-          <InputLabel /* TextLabel='Contraseña'  */textPlaceholder='contraseña' boolTypeText={false} keyboardType='default'/>
-       </View>
+         <FormLogin/>
        
-       <Pressable style={styles.btnLogin}>
-         <Text style={{fontWeight:'bold',color:'white'}}>SIGN IN</Text>
-       </Pressable>
-       <Pressable style={styles.btnCreate}>
-         <Text style={{fontWeight:'bold',color:'black'}}>CREATE ACCOUNT</Text>
-       </Pressable>
+      
       </View>
     )
 
@@ -61,3 +54,14 @@ const styles = StyleSheet.create({
       borderWidth:2,
     }
 })
+
+
+
+//<InputLabel /* TextLabel='Usuario' */ textPlaceholder='usuario' boolTypeText={false} keyboardType='default'/>
+//<InputLabel /* TextLabel='Contraseña'  */textPlaceholder='contraseña' boolTypeText={false} keyboardType='default'/>
+//<Pressable style={styles.btnLogin}>
+//<Text style={{fontWeight:'bold',color:'white'}}>SIGN IN</Text>
+//</Pressable>
+//<Pressable style={styles.btnCreate}>
+//<Text style={{fontWeight:'bold',color:'black'}}>CREATE ACCOUNT</Text>
+//</Pressable>

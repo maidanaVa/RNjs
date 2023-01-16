@@ -1,12 +1,14 @@
-import React from 'react'
-import { Text,TextInput,View,StyleSheet } from 'react-native'
 
-export default function InputLabel ({TextLabel,textPlaceholder,boolTypeText,keyboardType}) {
+import React from 'react'
+import { TextInput,View,StyleSheet } from 'react-native'
+import { Formik} from 'formik';
+
+export default function InputLabel ({/* TextLabel, */textPlaceholder,boolTypeText,keyboardType,nameProp,idProp}) {
   
     return (
       <View>
        {/* <Text style={{marginStart:30,color:'black',fontWeight:'bold'}}>{TextLabel}</Text> */}
-      <TextInput placeholder={textPlaceholder} style={styles.inputText} placeholderTextColor="white" secureTextEntry={boolTypeText} keyboardType={keyboardType}/>
+      <TextInput placeholder={textPlaceholder} style={styles.inputText} placeholderTextColor="white" secureTextEntry={boolTypeText} keyboardType={keyboardType} name={nameProp} id={idProp}/>
      
       </View>
     )
