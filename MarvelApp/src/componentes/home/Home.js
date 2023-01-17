@@ -11,11 +11,10 @@ export default function Home () {
     return (
       <View style={styles.cajaLogin}>
        <Text>Homeee</Text>
-          <Link to="/logIn"
-          underlayColor="#f0f4" >// funciona
+       <Link to="/logIn" underlayColor="#f0f4" >
 
             <Text>que funcione el react router</Text>
-          </Link>
+        </Link>
       </View>
     )
 

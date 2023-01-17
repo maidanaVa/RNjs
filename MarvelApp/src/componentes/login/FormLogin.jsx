@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import { Text, View,TextInput,Button,StyleSheet } from 'react-native'
 import { Formik } from 'formik'; 
+import loginWithEmailAndPass from '../../functions/loginWithEmailAndPass';
+import { useNavigate } from 'react-router-native';
+
 
 export default function  FormLogin () {
- 
+   const navigate=useNavigate()
     return (
       <View style={{marginVertical:20,width:320,backgroundColor:'blue',height:240}}>
         <Formik initialValues={{
@@ -12,6 +15,9 @@ export default function  FormLogin () {
         }}
         onSubmit={(values)=>{
             console.log(values)
+           loginWithEmailAndPass(values.username,values.password);
+           navigate('/characters')
+
         }}
         >
          {(props)=>(

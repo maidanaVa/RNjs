@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Text, View,StyleSheet,Image,Pressable } from 'react-native'
+import { Link } from 'react-router-native'
 import FormLogin from './FormLogin'
+
 /* import InputLabel from '../Globals/InputLabel' */
 
 
@@ -14,7 +16,9 @@ export default function Login () {
     
          <FormLogin/>
        
-      
+       <Link to="/register" >
+       <Text>No tenes cuenta? Registrate</Text>
+       </Link>
       </View>
     )
 

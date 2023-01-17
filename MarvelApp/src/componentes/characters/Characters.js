@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   cajaLogin:{
    
     flex:1,
-    backgroundColor:'white',
+    backgroundColor:'pink',
     justifyContent:'center',
     alignItems:'center',
     

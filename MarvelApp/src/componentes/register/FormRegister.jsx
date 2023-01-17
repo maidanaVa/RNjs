@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View,TextInput,Button,StyleSheet } from 'react-native'
 import { Formik } from 'formik'; 
+import registerUser from '../../functions/registerUser';
 
 export default function  FormRegister () {
  
@@ -14,7 +15,8 @@ export default function  FormRegister () {
             bday:'',
         }}
         onSubmit={(values)=>{
-            console.log(values)
+            console.log(values);
+            
         }}
         >
          {(props)=>(
