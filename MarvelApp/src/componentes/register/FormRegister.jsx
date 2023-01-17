@@ -6,7 +6,8 @@ import registerUser from '../../functions/registerUser';
 export default function  FormRegister () {
  
     return (
-      <View style={{marginVertical:20,width:320,backgroundColor:'blue',height:450}}>
+      <View style={{marginVertical:20,width:320,height:450,alignItems:'center'}}>
+        <Text style={{color:'red',marginVertical:20}}>CREATE YOUR ACCOUNT</Text>
         <Formik initialValues={{
             name:'',
             lastName:'',
@@ -20,26 +21,26 @@ export default function  FormRegister () {
         }}
         >
          {(props)=>(
-            <>
-            <View style={{backgroundColor:'orange'}}>
+            <View style={{width:300,flex:1}}>
+            <View >
                  <TextInput style={styles.input} placeholder='Name' onChangeText={props.handleChange('name')} value={props.values.name}/>
             </View>
-            <View style={{backgroundColor:'green'}}>
+            <View >
                  <TextInput style={styles.input} placeholder='Lastname' onChangeText={props.handleChange('lastName')} value={props.values.lastName}/>
             </View>
-            <View style={{backgroundColor:'yellow'}}>
+            <View >
                  <TextInput style={styles.input} placeholder='Email' onChangeText={props.handleChange('email')} value={props.values.email}/>
             </View>
-            <View style={{backgroundColor:'brown'}}>
+            <View >
                  <TextInput style={styles.input} placeholder='Password' onChangeText={props.handleChange('password')} value={props.values.password}/>
             </View>
-            <View style={{backgroundColor:'violet'}}>
+            <View>
                  <TextInput style={styles.input} placeholder='Bday' onChangeText={props.handleChange('bday')} value={props.values.bday}/>
             </View>
 
 
-            <Button title='sign in' color='red' onPress={props.handleSubmit}/>
-            </>
+            <Button title='sign Up' color='red' onPress={props.handleSubmit}/>
+            </View>
          )}
         </Formik>
 
