@@ -36,7 +36,7 @@ export default function ListCharacters () {
                 <Image style={{width:180,height:180}} source={{uri:`${charMarvel.thumbnail.path}.${charMarvel.thumbnail.extension}`}}/>
                 
 
-                <View style={{width:180,height:110,backgroundColor:'black',borderTopColor:'red',borderTopWidth:5}}>
+                <View style={{width:180,height:110,backgroundColor:'#151515',borderTopColor:'red',borderTopWidth:5}}>
                        <Text style={{color:'white',padding:10}} key={charMarvel.id}>{charMarvel.name}</Text>
                 </View>
               

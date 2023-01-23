@@ -2,25 +2,15 @@ import React, { Component } from 'react'
 import { Text, View,TextInput,Button,StyleSheet } from 'react-native'
 import { Formik } from 'formik'; 
 import loginWithEmailAndPass from '../../functions/loginWithEmailAndPass';
-import { useNavigate } from 'react-router-native';
+/* import { useNavigate } from 'react-router-native'; */
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { _fromIdTokenResponse } from '@firebase/auth/dist/rn/src/core/user/additional_user_info';
 import firebaseApp from '../../firebase/credentials';
 
 
-export default function  FormLogin () {
-   const navigate=useNavigate();
+export default function  FormLogin (props) {
 
-  /*  const fetchAllItems = async () => {
-    try {
-        const keys = await AsyncStorage.getAllKeys()
-        const items = await AsyncStorage.multiGet(keys)
- 
-        console.log(items) 
-    } catch (error) {
-        console.log(error, "problemo")
-    }
-} */
+
   
     return (
       <View style={{marginVertical:20,width:320,height:240}}>
@@ -32,7 +22,7 @@ export default function  FormLogin () {
             
             loginWithEmailAndPass(values.username,values.password);
           /*   console.log(AsyncStorage.getItem('UserCredentialImpl')) */
-            navigate('/characters');
+          /*   navigate('/characters'); */
             /* fetchAllItems() */
 
         }}

@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import { Text, View,StyleSheet,Image,Pressable } from 'react-native'
-import { Link } from 'react-router-native'
+/* import { Link } from 'react-router-native' */
 import FormLogin from './FormLogin'
 
-/* import InputLabel from '../Globals/InputLabel' */
 
 
-export default function Login () {
+export default function Login (props) {
  
     return (
       <View style={styles.cajaLogin}>
@@ -16,9 +15,9 @@ export default function Login () {
     
          <FormLogin/>
        
-       <Link to="/register" >
+      <Pressable onPress={() => props.navigation.navigate("Register")} >
        <Text>No tenes cuenta? Registrate</Text>
-       </Link>
+       </Pressable>
       </View>
     )
 

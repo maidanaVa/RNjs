@@ -1,93 +1,40 @@
 import React, { Component } from 'react'
-import { Text, View,StyleSheet,ScrollView,StatusBar,SafeAreaView,ViewGroup,Button, Pressable} from 'react-native'
-import { Link } from 'react-router-native'
+import { Text, View,StyleSheet,ScrollView,StatusBar,Image} from 'react-native'
+import Pressable from 'react-native/Libraries/Components/Pressable/Pressable'
+/* import { Link } from 'react-router-native' */
+import Footer from '../footer/Footer'
+import ListComics from './ListComics'
+import Redes from './Redes'
+import Seccion1 from './Seccion1'
+import Seccion2 from './Seccion2'
+import Slider from './Slider'
 
 
 
 
 
-export default function Home () {
+export default function Home (props) {
+
  
     return (
     
-        <ScrollView contentContainerStyle={styles.scrollView}>
-         
-                <Text>Homeee</Text>
-                <Link to="/logIn" underlayColor="#f0f4" >
-
-                <Text>que funcione el react router</Text>
-                </Link>
-             
-                <Text style={{fontSize:20}}>Scroll me plz</Text>  
-               
-                <Text style={{fontSize:20}}>React Native Example of ScrollView</Text>  
-                
-                <Text style={{fontSize:20}}>React Native ScrollView Example</Text>  
-               
-                <Text style={{fontSize:20}}>If you like</Text>  
-              
-                <Text style={{fontSize:20}}>Scrolling down</Text>  
-                
-                <Text style={{fontSize:20}}>Scrolling down</Text>  
-             
-                <Text style={{fontSize:20}}>What's the best</Text>  
-             
-                <Text style={{fontSize:20}}>What's the best</Text>  
-              
-                <Text style={{fontSize:20}}>Framework around?</Text>  
-               
-                <Text style={{fontSize:20}}>Framework around?</Text>  
-               
-                <Text style={{fontSize:20}}>React Native</Text>  
-               
-                <Text style={{fontSize:20}}>Scroll me plz5</Text>  
-               
-                <Text style={{fontSize:20}}>Framework around?</Text>  
-              
-                <Text style={{fontSize:20}}>React Native</Text>  
-                
-                <Text style={{fontSize:20}}>Scroll me plz7</Text>  
-                 
-                <Text style={{fontSize:20}}>Scrolling down</Text>  
-             
-                <Text style={{fontSize:20}}>What's the best</Text>  
-             
-                <Text style={{fontSize:20}}>What's the best</Text>  
-              
-                <Text style={{fontSize:20}}>Framework around?</Text>  
-               
-                <Text style={{fontSize:20}}>Framework around?</Text>  
-               
-                <Text style={{fontSize:20}}>React Native</Text>  
-               
-                <Text style={{fontSize:20}}>Scroll me plz5</Text>  
-               
-                <Text style={{fontSize:20}}>Framework around?</Text>  
-              
-                <Text style={{fontSize:20}}>React Native</Text>  
-                
-                <Text style={{fontSize:20}}>Scroll me plz7</Text>  
-                 
-                <Text style={{fontSize:20}}>Scrolling down</Text>  
-             
-                <Text style={{fontSize:20}}>What's the best</Text>  
-             
-                <Text style={{fontSize:20}}>What's the best</Text>  
-              
-                <Text style={{fontSize:20}}>Framework around?</Text>  
-               
-                <Text style={{fontSize:20}}>Framework around?</Text>  
-               
-                <Text style={{fontSize:20}}>React Native</Text>  
-               
-                <Text style={{fontSize:20}}>Scroll me plz5</Text>  
-               
-                <Text style={{fontSize:20}}>Framework around?</Text>  
-              
-                <Text style={{fontSize:20}}>React Native</Text>  
-                
-                <Text style={{fontSize:20}}>Scroll me plz15</Text>  
-              
+        <ScrollView  contentContainerStyle={styles.scrollView}>
+                <View style={{flexDirection:'row',backgroundColor:'black',width:'100%',height:40,justifyContent:'center',alignItems:'center',justifyContent:'space-evenly'}}>
+                   <Text >STREAM THE GOTG: HOLIDAY SPECIAL ON</Text>
+                   <Image style={styles.imgDisney}  source={require('../../assets/disney2.jpg')}/>
+                </View>
+                <Slider/>
+                <Redes/>
+                <Seccion1/>
+                <ListComics/>
+                 <Pressable onPress={() => props.navigation.navigate("Login")} >
+                <Text style={{color:'black'}}>Homeee</Text>
+                </Pressable>
+      {/*           <Link to="/logIn" underlayColor="#f0f4" >
+                    <Text style={{color:'black'}}>que funcione el react router</Text>
+                </Link> */}
+                <Seccion2/>
+                <Footer/>
         </ScrollView>
        
       
@@ -101,7 +48,7 @@ const styles = StyleSheet.create({
     paddingTop: StatusBar.currentHeight,
   },
   scrollView: {
-    backgroundColor: 'pink',
+    backgroundColor:'white',
     
     justifyContent:'center',
     alignItems: 'center',
@@ -115,4 +62,9 @@ const styles = StyleSheet.create({
     alignItems:'center',
     
     },
+    imgDisney:{
+     width:80,
+      height:35,
+    
+    }
 })
