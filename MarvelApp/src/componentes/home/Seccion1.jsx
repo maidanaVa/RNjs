@@ -31,6 +31,10 @@ const styles = StyleSheet.create({
     borderWidth:2,
     alignItems:'center',
     justifyContent:'center',
+    borderTopLeftRadius: 15,
+    borderTopRightRadius: 0,
+    borderBottomLeftRadius:0,
+    borderBottomRightRadius:15,
   },
     marvel2:{
       width:80,

@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
-import { Text, View,StyleSheet,Image,Pressable, TextInput } from 'react-native'
+import { Text, View,StyleSheet,Image,Pressable} from 'react-native'
 import FormRegister from './FormRegister';
-/* import InputLabel from '../globals/InputLabel'; */
 
 
-export default function Register () {
+export default function Register ({isLoged,setIsLoged,navigation}) {
  
     return (
       <View style={styles.cajaRegister}>
 
         <Image source={require('../../assets/Marvel-Comics-logo.png')} style={styles.imgRegister}/>
-         <FormRegister/>
+         <FormRegister isLoged2={isLoged} setIsLoged2={setIsLoged}/>
+
+         <Pressable onPress={()=>navigation.navigate("Login")}  >
+          <Text>Ya tenes cuenta? Logueate </Text>
+        </Pressable>
       </View>
     )
 

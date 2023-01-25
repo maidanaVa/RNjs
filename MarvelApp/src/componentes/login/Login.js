@@ -1,23 +1,24 @@
 import React, { Component } from 'react'
 import { Text, View,StyleSheet,Image,Pressable } from 'react-native'
-/* import { Link } from 'react-router-native' */
+
 import FormLogin from './FormLogin'
 
 
 
-export default function Login (props) {
- 
+export default function Login ({isLoged,setIsLoged,navigation}) {
+
     return (
       <View style={styles.cajaLogin}>
        <Image source={require('../../assets/Marvel-Comics-logo.png')} style={styles.imgLogin}/>
     
        <Text style={{color:'red',fontSize:18}}>SIGN IN</Text>
     
-         <FormLogin/>
+         <FormLogin isLoged2={isLoged} setIsLoged2={setIsLoged} />
        
-      <Pressable onPress={() => props.navigation.navigate("Register")} >
-       <Text>No tenes cuenta? Registrate</Text>
+      <Pressable onPress={()=>navigation.navigate("Register")}  >
+       <Text>No tenes cuenta? Registrate </Text>
        </Pressable>
+       
       </View>
     )
 

@@ -27,12 +27,10 @@ export default function Home (props) {
                 <Redes/>
                 <Seccion1/>
                 <ListComics/>
-                 <Pressable onPress={() => props.navigation.navigate("Login")} >
+                 {/* <Pressable onPress={() => props.navigation.navigate("Login")} >
                 <Text style={{color:'black'}}>Homeee</Text>
-                </Pressable>
-      {/*           <Link to="/logIn" underlayColor="#f0f4" >
-                    <Text style={{color:'black'}}>que funcione el react router</Text>
-                </Link> */}
+                </Pressable> */}
+    
                 <Seccion2/>
                 <Footer/>
         </ScrollView>

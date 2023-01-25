@@ -32,11 +32,11 @@ export default function ListCharacters () {
         <View style={{width:'100%',flexDirection:'row',flexWrap:'wrap',justifyContent:'space-evenly'}} >
      {
         characters.map((charMarvel)=>(
-            <View key={charMarvel.id} style={{backgroundColor:'black',width:180,marginBottom:12}}>
+            <View key={charMarvel.id} style={{backgroundColor:'black',width:180,marginBottom:12,borderBottomRightRadius:25}}>
                 <Image style={{width:180,height:180}} source={{uri:`${charMarvel.thumbnail.path}.${charMarvel.thumbnail.extension}`}}/>
                 
 
-                <View style={{width:180,height:110,backgroundColor:'#151515',borderTopColor:'red',borderTopWidth:5}}>
+                <View style={{width:180,height:110,backgroundColor:'#151515',borderTopColor:'red',borderTopWidth:5, borderBottomRightRadius:25}}>
                        <Text style={{color:'white',padding:10}} key={charMarvel.id}>{charMarvel.name}</Text>
                 </View>
               

@@ -2,9 +2,17 @@ import React, { Component } from 'react'
 import { Text, View,TextInput,Button,StyleSheet } from 'react-native'
 import { Formik } from 'formik'; 
 import registerUser from '../../functions/registerUser';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function  FormRegister () {
- 
+export default function  FormRegister ({isLoged2,setIsLoged2}) {
+
+ async function condition2(){
+     const okUser2= await AsyncStorage.getItem('usuarioTR');
+       if(okUser2!==null){
+        setIsLoged2(true) 
+        }
+     }
+
     return (
       <View style={{marginVertical:20,width:320,height:450,alignItems:'center'}}>
         <Text style={{color:'red',marginVertical:20}}>CREATE YOUR ACCOUNT</Text>
@@ -17,7 +25,7 @@ export default function  FormRegister () {
         }}
         onSubmit={(values)=>{
            registerUser(values.email,values.password);
-            
+            condition2();
         }}
         >
          {(props)=>(
@@ -43,7 +51,7 @@ export default function  FormRegister () {
             </View>
          )}
         </Formik>
-
+       
    
       </View>
     )
@@ -56,5 +64,6 @@ input:{
     marginBottom:10,
     height:65,
     borderRadius:5,
+    paddingLeft:20,
 }
 })

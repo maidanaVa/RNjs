@@ -1,12 +1,18 @@
-import React, { Component } from 'react'
+import React, { useEffect } from 'react'
 import { Text, ViewGroup,StyleSheet,ScrollView,ImageBackground, View} from 'react-native';
 import CharactersImg from '../../assets/characters.jpg'
 import ListCharacters from './ListCharacters';
 
 
 
-export default function Characters () {
- 
+export default function Characters ({navigation,isLoged}) {
+  
+  useEffect(()=>{
+        if(isLoged){
+             navigation.navigate('Home');
+        }
+  },[navigation,isLoged])
+
     return (
       <ScrollView contentContainerStyle={styles.scrollView}>
    
