@@ -27,10 +27,6 @@ export default function Home (props) {
                 <Redes/>
                 <Seccion1/>
                 <ListComics/>
-                 {/* <Pressable onPress={() => props.navigation.navigate("Login")} >
-                <Text style={{color:'black'}}>Homeee</Text>
-                </Pressable> */}
-    
                 <Seccion2/>
                 <Footer/>
         </ScrollView>

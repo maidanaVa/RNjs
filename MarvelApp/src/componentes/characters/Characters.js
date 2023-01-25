@@ -33,20 +33,14 @@ export default function Characters ({navigation,isLoged}) {
 
 const styles = StyleSheet.create({
   scrollView: {
-   
     backgroundColor: 'white',
-    
     justifyContent:'center',
-    
-   
   },
   imgBackG:{
     width:'100%',
     height:350,
     alignItems:'center',
     justifyContent:'center',
-    
-    
   },
  
 })
