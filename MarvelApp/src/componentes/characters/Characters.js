@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Text, ViewGroup,StyleSheet,ScrollView,ImageBackground, View} from 'react-native';
 import CharactersImg from '../../assets/characters.jpg'
 import ListCharacters from './ListCharacters';
+import SearchChar from './SearchChar';
 
 
 
@@ -24,8 +25,9 @@ export default function Characters ({navigation,isLoged}) {
        </ImageBackground>
        <Text style={{color:'black',fontFamily:'lucida grande',fontSize:17,marginVertical:18,paddingLeft:20}}>FEATURED CHARACTERS</Text>
        <ListCharacters/> 
-       <Text style={{color:'black',fontFamily:'lucida grande',fontSize:17,marginVertical:18,paddingLeft:20}}>CHARACTER SPOTLIGHT</Text>
-       <Text style={{color:'black',fontFamily:'lucida grande',fontSize:17,marginVertical:18,paddingLeft:20}}>otra cosaasaaaeeeeeeeeeeeeeeeeeeeee</Text>
+       <Text style={{color:'black',fontFamily:'lucida grande',fontSize:17,marginVertical:18,paddingLeft:20}}>MARVEL CHARACTERS LIST</Text>
+    
+      <SearchChar/>
       </ScrollView>
     )
 

@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { Text, View,StyleSheet,ScrollView,StatusBar,Image} from 'react-native'
-import Pressable from 'react-native/Libraries/Components/Pressable/Pressable'
-/* import { Link } from 'react-router-native' */
 import Footer from '../footer/Footer'
 import ListComics from './ListComics'
 import Redes from './Redes'
@@ -13,7 +11,7 @@ import Slider from './Slider'
 
 
 
-export default function Home (props) {
+export default function Home () {
 
  
     return (
