@@ -10,7 +10,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
         
         await AsyncStorage.setItem('usuarioT',JSON.stringify(user._tokenResponse));
         console.log(user)
-        
        
     } catch (error) {
         console.log(error);

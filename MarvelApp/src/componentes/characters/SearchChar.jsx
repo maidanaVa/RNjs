@@ -57,7 +57,7 @@ export default function SearchChar() {
     return (
         <View style={{flexDirection:'column',alignItems:'center'}}>
 
-            <TextInput style={styles.inputSearch} placeholder='SEARCH' placeholderTextColor={'black'}  
+            <TextInput style={styles.inputSearch} inlineImagePadding={8} inlineImageLeft='search' placeholder='SEARCH' placeholderTextColor={'black'}  
             onChangeText={(text)=>{
                setBusqueda(text);
                filtrar(text)

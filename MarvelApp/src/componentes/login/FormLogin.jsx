@@ -2,21 +2,15 @@ import React, { Component } from 'react'
 import { Text, View,TextInput,Button,StyleSheet } from 'react-native'
 import { Formik } from 'formik'; 
 import loginWithEmailAndPass from '../../functions/loginWithEmailAndPass';
+import * as yup from 'yup';
 
-import { _fromIdTokenResponse } from '@firebase/auth/dist/rn/src/core/user/additional_user_info';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+const schemaLogin = yup.object().shape({
+  username: yup.string().email().required(),
+  password: yup.string().min(6).required(),
+});
 
-
-export default function  FormLogin ({isLoged2,setIsLoged2 }) {
+export default function  FormLogin () {
  
- async function condition(){
-   const okUser= await AsyncStorage.getItem('usuarioT');
-   if(okUser!==null){
-    setIsLoged2(true) 
-   }
- }
-
- console.log(isLoged2)
 
     return (
       <View style={{marginVertical:20,width:320,height:240}}>
@@ -24,9 +18,9 @@ export default function  FormLogin ({isLoged2,setIsLoged2 }) {
             username:'',
             password:'',
         }}
+        validationSchema={schemaLogin}
         onSubmit={(values)=>{
-          loginWithEmailAndPass(values.username,values.password);
-           condition();
+            loginWithEmailAndPass(values.username,values.password);
         
         }}
         >
@@ -34,9 +28,11 @@ export default function  FormLogin ({isLoged2,setIsLoged2 }) {
             <>
             <View >
                  <TextInput style={styles.input} placeholder='Username' onChangeText={props.handleChange('username')} value={props.values.username}/>
+                 <Text style={styles.textErrors}>{props.errors.username}</Text>
             </View>
             <View >
-                 <TextInput style={styles.input} placeholder='Password' onChangeText={props.handleChange('password')} value={props.values.password}/>
+                 <TextInput style={styles.input} placeholder='Password' onChangeText={props.handleChange('password')}  value={props.values.password}/>
+                 <Text style={styles.textErrors}>{props.errors.password}</Text>
             </View>
             <Button title='sign in' color='red' onPress={props.handleSubmit}/>
             
@@ -53,9 +49,15 @@ const styles = StyleSheet.create({
 input:{
     borderWidth:1,
     borderColor:'white',
-    marginBottom:10,
+    marginBottom:2,
     height:65,
     borderRadius:5,
     paddingLeft:20,
+},
+textErrors:{
+  color:'red',
+  fontSize:12,
+  marginBottom:5,
+
 }
 })

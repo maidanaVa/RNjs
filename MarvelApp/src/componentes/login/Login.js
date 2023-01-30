@@ -1,19 +1,19 @@
 import React, { Component } from 'react'
 import { Text, View,StyleSheet,Image,Pressable } from 'react-native'
-
+/* import * as Animatable from 'react-native-animatable'; */
 import FormLogin from './FormLogin'
 
 
 
-export default function Login ({isLoged,setIsLoged,navigation}) {
+export default function Login ({navigation}) {
 
     return (
       <View style={styles.cajaLogin}>
-       <Image source={require('../../assets/Marvel-Comics-logo.png')} style={styles.imgLogin}/>
-    
+       <Image  source={require('../../assets/Marvel-Comics-logo.png')} style={styles.imgLogin}/>
+       {/* <Animatable.Text animation={fadeInLeftBig} > HOLI</Animatable.Text> */}
        <Text style={{color:'red',fontSize:18}}>SIGN IN</Text>
     
-         <FormLogin isLoged2={isLoged} setIsLoged2={setIsLoged} />
+         <FormLogin  />
        
       <Pressable onPress={()=>navigation.navigate("Register")}  >
        <Text>No tenes cuenta? Registrate </Text>
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     imgLogin:{
       width:230,
       height:100,
-      marginBottom:100,
+      marginBottom:70,
      
     },
     btnLogin:{
@@ -61,11 +61,3 @@ const styles = StyleSheet.create({
 
 
 
-//<InputLabel /* TextLabel='Usuario' */ textPlaceholder='usuario' boolTypeText={false} keyboardType='default'/>
-//<InputLabel /* TextLabel='Contraseña'  */textPlaceholder='contraseña' boolTypeText={false} keyboardType='default'/>
-//<Pressable style={styles.btnLogin}>
-//<Text style={{fontWeight:'bold',color:'white'}}>SIGN IN</Text>
-//</Pressable>
-//<Pressable style={styles.btnCreate}>
-//<Text style={{fontWeight:'bold',color:'black'}}>CREATE ACCOUNT</Text>
-//</Pressable>

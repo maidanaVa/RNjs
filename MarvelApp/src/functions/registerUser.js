@@ -1,5 +1,5 @@
 import {auth} from '../firebase/credentials';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { AuthErrorCodes, createUserWithEmailAndPassword } from 'firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
  export default async function registerUser(email,password) {
@@ -10,5 +10,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
         
     } catch (error) {
         console.log(error);
+        var errorCode= AuthErrorCodes;
+       
+        if(errorCode==='auth/email-already-in-use)'){
+            var errormessage='el email ya se encuentra utilizado';
+        }
     }
 }

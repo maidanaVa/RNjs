@@ -10,6 +10,9 @@ import Login from './src/componentes/login/Login.js';
 import Register from './src/componentes/register/Register.js';  
  import logOut from './src/functions/logOut';
 
+ import {onAuthStateChanged } from '@firebase/auth';
+import { auth } from './src/firebase/credentials.js';
+
 
 function LogoTitle() {
   return (
@@ -27,7 +30,13 @@ const Drawer = createDrawerNavigator();
 export default function App () {
  const [isLoged,setIsLoged]=useState(false);
 
-
+ onAuthStateChanged(auth,userF=>{
+  if(userF!==null){
+    setIsLoged(true)
+  }else{
+    setIsLoged(false)
+  }
+ })
 
     return (
     <NavigationContainer>
@@ -61,8 +70,6 @@ export default function App () {
                     <DrawerItem labelStyle={{color:'white',backgroundColor:'red',fontSize:18,fontWeight:'bold',width:150,height:30, borderBottomRightRadius:20,borderTopLeftRadius:20, textAlign:'center'}} label="Logout" 
                     onPress={() =>{
                       logOut();
-                      setIsLoged(false);
-                      props.navigation.canGoBack();
                       props.navigation.closeDrawer();
                     } } />
                   }
@@ -77,10 +84,10 @@ export default function App () {
             
          <Drawer.Group screenOptions={{  drawerItemStyle: { display: "none" }}}  >
             <Drawer.Screen name="Login">
-                {(props) => <Login {...props} isLoged={isLoged}  setIsLoged={setIsLoged} />}
+                {(props) => <Login {...props}  />}
             </Drawer.Screen>
             <Drawer.Screen name="Register">
-               {(props) => <Register {...props} isLoged={isLoged}  setIsLoged={setIsLoged} />}
+               {(props) => <Register {...props} />}
             </Drawer.Screen>
          </Drawer.Group>
           :
